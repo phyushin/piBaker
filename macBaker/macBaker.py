@@ -1,6 +1,8 @@
 #
-#    Copyright Phyushin 2012 Pi Baker (mac) V0.8
-#  
+#    Copyright Phyushin 2012
+ Pi Baker (mac) V0.81
+#
+  
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -21,7 +23,8 @@ import os;
 
 class mac_baker:
     def __init__(self):
-        title='';        
+        title='';
+        
     def shell_call(self ,value):
         sts =os.system(value);
         
@@ -37,6 +40,7 @@ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 ******************************************by Phyushin***********
      """ 
         print title;
+        
     def baking(self):
         message = """
 888888b.            888      d8b                   
@@ -78,7 +82,6 @@ print('-------------------------------------');
 print('Select SD card location(the /dev/ part isn'' needed):');
 sd_card_location = '/dev/' + raw_input();
 print('you entered: ') + sd_card_location + (' is this correct?');
-
 choice = raw_input();
 if choice ==('y'):
     print('enter SD location like this (/dev/r(disknumber) for '+ sd_card_location);
@@ -89,7 +92,7 @@ if choice ==('y'):
     b.shell_call('sudo diskutil unmount '+sd_card_location);
     b.shell_call('clear');
     b.baking();
-    b.shell_call('sudo dd bs=1m if='+ img_path+' of=/dev/'+sd_card)
-    b.shell_call('sudo diskutil eject '+ sd_card )
+    b.shell_call('sudo dd bs=1m if='+ img_path+' of=/dev/'+sd_card);
+    b.shell_call('sudo diskutil eject '+ sd_card );
 
 
